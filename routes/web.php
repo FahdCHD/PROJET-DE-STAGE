@@ -23,6 +23,12 @@ Route::get('/',[LoginController::class,'show'])->name('login.show');
 Route::post('/',[LoginController::class,'login'])->name('login');
 Route::get('/logout',[LoginController::class,'logout'])->name('login.logout');
 
+Route::get('/superadmin',[FUsersController::class,'superadmin'])->name('superadmin');
+Route::get('/admin',[FUsersController::class,'admin'])->name('admin');
+Route::get('/dephead',[FUsersController::class,'departmenthead'])->name('superadmin');
+Route::get('/staff',[FUsersController::class,'staff'])->name('staff');
+Route::get('/client',[FUsersController::class,'client'])->name('client');
+
 // ajouter
 Route::get('/login/create',[LoginController::class,'create'])->name("create");
 Route::post('/login/store',[LoginController::class,'store'])->name("store");

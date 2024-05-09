@@ -19,6 +19,7 @@ class FUsersFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
+            'role' => fake()->unique()->numberBetween(1,5),
             'password' => Hash::make("hello") // password
         ];
     }

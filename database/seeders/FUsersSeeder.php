@@ -15,7 +15,7 @@ class FUsersSeeder extends Seeder
     public function run()
     {
         
-        FUsers::factory(20)->create();
+        FUsers::factory(5)->create();
 
     }
 }

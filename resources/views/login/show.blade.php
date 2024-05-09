@@ -25,7 +25,7 @@
                 <input type="password" name="password" class="form-control" >
             </div>
             <div class="d-grid">
-                <button class="btn btn-primary">Se connecter</button>
+                <button class="btn btn-success">Se connecter</button>
             </div>
 
         </form>

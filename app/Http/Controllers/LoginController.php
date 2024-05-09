@@ -22,13 +22,34 @@ class LoginController extends Controller
 
             //     return redirect("");
             // }
+            $request->validate([
+                "email"=> "required|email",
+                "password"=> "required"
+            ]);
             if(Auth::attempt($credentials)){
-                $request->session()->regenerate();
-                return redirect("/home");
+                // $request->session()->regenerate();
+                $user_role = auth()->user()->role;
+               if($user_role==1){
+                return redirect("/superadmin");
+               }
+               if($user_role==2){
+                return redirect("/admin");
+               }
+               if($user_role==3){
+                return redirect("/dephead");
+               }
+               if($user_role==4){
+                return redirect("/staff");
+               }
+               if($user_role==5){
+                return redirect("/client");
+               }
+                
             }else{
-                return back()->withErrors(
-                    ["email"=> "Email ou Mot de pass incorrect"]
-                    )->onlyInput("email");
+                // return back()->withErrors(
+                //     ["email"=> "Email ou Mot de pass incorrect"]
+                //     )->onlyInput("email");
+                return redirect("/");
             }
     }
 

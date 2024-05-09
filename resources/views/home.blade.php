@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <x-master>
-        
+    <x-master>        
             <h3>Home</h3>
-    </x-master></body>
+    </x-master>
+</body>
 </html>
