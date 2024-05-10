@@ -60,7 +60,7 @@ class LoginController extends Controller
     }
 
     public function create(Request $request){
-        return view("ajouter");
+        return view("login.ajouter");
     }
     public function store(Request $request){
         // $name = $request->name;

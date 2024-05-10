@@ -3,9 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\FUsers;
 
 class FUsersController extends Controller
 {
+
+    public function edit(){
+        return view("/login.edit");
+    }
+    public function update(){
+        dd(auth()->user());
+    }
+
+
     public function superadmin(){
             return view("/superadmin");
     }

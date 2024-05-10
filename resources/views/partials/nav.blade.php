@@ -1,3 +1,4 @@
+
 @php $rolename = auth()->user()->role == 1 ? 'superadmin' : 
 $rolename = auth()->user()->role == 2 ? 'admin' : 
 $rolename = auth()->user()->role == 3 ? 'dephead' : 
@@ -15,7 +16,7 @@ $rolename = auth()->user()->role == 5 ? 'client' : '' @endphp
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/{{$rolename}}">Home</a>
           </li>
-        </div>
+          </div>
           @auth
           <div class="dropdown">
             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,8 +33,12 @@ $rolename = auth()->user()->role == 5 ? 'client' : '' @endphp
                 @endif
                 | {{auth()->user()->name}} 
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="{{route('login.logout')}}">Déconnexion</a>
+            <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuButton">
+                <form action="{{route('edit',auth()->user()->id)}}" method="GET">
+                  <button class="dropdown-item">Profile</button>
+                </form>
+                
+                <a class="dropdown-item"  href="{{route('login.logout')}}">Déconnexion</a>
             </div>
           </div>
           @endauth
