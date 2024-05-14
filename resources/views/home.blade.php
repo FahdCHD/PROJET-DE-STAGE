@@ -8,7 +8,7 @@
 </head>
 <body>
     <x-master>        
-            <h3>Home</h3>
+            <h3>WELCOME</h3>
     </x-master>
 </body>
 </html>
