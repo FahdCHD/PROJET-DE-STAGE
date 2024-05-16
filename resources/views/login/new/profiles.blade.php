@@ -9,7 +9,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container m-5">
+
+    <div class="container">
+        <br>
+    <div style="width:300px; ">
+        <div class="form-group">
+            <form action="/profiles/search" method="get">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="search.." value="{{isset($search) ? $search:""}}" >&nbsp &nbsp
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="">
         <table class="table">
             <thead>
                 <th>Name</th>
@@ -23,10 +36,17 @@
                         <td style="display: none">{{$user->id}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td>{{$user->role}}</td>
+                        <td>{{$user->name_role}}</td>
                         <td>
-                            <a href="{{url('profiles/edit/'.$user->id)}}" class="btn btn-success">Edit</a>
-                            <a href=""class="btn btn-danger">Delete</a>
+                            <div>
+                            <a href="{{url('profiles/edit/'.$user->id)}}" style="width: 60%; margin-bottom: 3px" class="btn btn-success">Edit</a>
+                            {{-- <a href="{{url('profiles/destroy/'.$user->id)}}"class="btn btn-danger">Delete</a> --}}
+                            <form action="{{url('profiles/destroy/'.$user->id)}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button  style="width: 60%" class="btn btn-danger">Supprimer</button>
+                            </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach
@@ -34,5 +54,6 @@
         </table>
         {{$users->links()}}
     </div>
+</div>
 </body>
 </html>

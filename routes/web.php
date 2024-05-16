@@ -46,5 +46,10 @@ Route::post('/store',[LoginController::class,'store'])->name("store");
 
 //new
 Route::get( "/profiles",[newController::class,"index"])->name("profiles");
+//update
 Route::get("/profiles/edit/{id}",[newController::class,"edit"])->name("profile.edit");
 Route::put("/profiles/edit/{id}",[newController::class,"update"])->name("profile.update");
+//delete
+Route::delete("/profiles/destroy/{id}",[newController::class,"destroy"])->name("profile.destroy");
+//search 
+Route::get("/profiles/search",[newController::class,"index"])->name("profile.search");

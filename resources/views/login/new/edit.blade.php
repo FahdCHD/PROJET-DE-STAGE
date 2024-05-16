@@ -30,11 +30,11 @@
                  <input type="text" class="form-control" name="name" aria-describedby="helpId" value="{{$U->name}}">
                  <small id="helpId" class="form-text text-muted">Help text</small>
                </div>
-               @error('name')
+               {{-- @error('name')
                <div class="text-danger"> 
                     {{$message}}
               </div>
-               @enderror
+               @enderror --}}
             </div>
             <div class="m-3">
                <div class="form-group">
